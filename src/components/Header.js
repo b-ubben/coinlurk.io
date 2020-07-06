@@ -13,41 +13,43 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-cloudy shadow-md border w-full flex p-4 items-center justify-between z-10">
-      <div>
-        <span className="font-bold text-xl text-yellow-700">Coin</span>
-        <span className="font-bold text-xl text-blue-700">LURK</span>
-        <span className="font-bold text-sm">.io</span>
-      </div>
-      <div className="text-xs">
-        <Formik initialValues={searchInitialValues} onSubmit={handleSearch}>
-          {({ values, isSubmitting }) => (
-            <Form method="post">
-              <fieldset disabled={isSubmitting}>
-                <div className="flex">
-                  <Field
-                    type="text"
-                    placeholder="search (DuckDuckGo)"
-                    name="searchTerms"
-                    className="border rounded-r-none rounded-lg p-2"
-                    autoComplete="off"
-                  />
-                  <button
-                    type="submit"
-                    className="rounded-lg rounded-l-none bg-blue-600 text-white px-4 py-2"
-                  >
-                    <img
-                      src={SearchIcon}
-                      alt="search"
-                      className="object-contain"
-                      style={{ maxHeight: '1.1rem' }}
+    <header className="bg-darker-grey p-4 z-10">
+      <div className="flex w-full items-center justify-between m-auto" style={{ maxWidth: '72rem' }}>
+        <div>
+          <span className="font-bold text-xl text-yellow-700">Coin</span>
+          <span className="font-bold text-xl text-gray-300">LURK</span>
+          <span className="font-bold text-sm">.io</span>
+        </div>
+        <div className="text-xs">
+          <Formik initialValues={searchInitialValues} onSubmit={handleSearch}>
+            {({ values, isSubmitting }) => (
+              <Form method="post">
+                <fieldset disabled={isSubmitting}>
+                  <div className="flex">
+                    <Field
+                      type="text"
+                      placeholder="search (DuckDuckGo)"
+                      name="searchTerms"
+                      className="border border-black bg-dark-grey rounded-r-none rounded-lg p-2"
+                      autoComplete="off"
                     />
-                  </button>
-                </div>
-              </fieldset>
-            </Form>
-          )}
-        </Formik>
+                    <button
+                      type="submit"
+                      className="border border-black border-l-0 rounded-lg rounded-l-none bg-grey text-white px-4 py-2"
+                    >
+                      <img
+                        src={SearchIcon}
+                        alt="search"
+                        className="object-contain"
+                        style={{ maxHeight: '1.1rem' }}
+                      />
+                    </button>
+                  </div>
+                </fieldset>
+              </Form>
+            )}
+          </Formik>
+        </div>
       </div>
     </header>
   );
