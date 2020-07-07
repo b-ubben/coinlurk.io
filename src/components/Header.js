@@ -13,14 +13,14 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-darker-grey p-4 z-10">
-      <div className="flex w-full items-center justify-between m-auto" style={{ maxWidth: '72rem' }}>
+    <header className="border border-black bg-darker-grey p-4 z-10">
+      <div className="flex flex-col sm:flex-row w-full items-center justify-between m-auto" style={{ maxWidth: '72rem' }}>
         <div>
           <span className="font-bold text-xl text-yellow-700">Coin</span>
           <span className="font-bold text-xl text-gray-300">LURK</span>
           <span className="font-bold text-sm">.io</span>
         </div>
-        <div className="text-xs">
+        <div className="text-xs mt-4 sm:mt-0">
           <Formik initialValues={searchInitialValues} onSubmit={handleSearch}>
             {({ values, isSubmitting }) => (
               <Form method="post">

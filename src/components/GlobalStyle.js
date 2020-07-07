@@ -13,6 +13,7 @@ export default createGlobalStyle`
       box-sizing: border-box;
     }
 
+    background-color: var(--dark-grey);
     font-family: 'Roboto Mono', sans-serif !important;
   }
 

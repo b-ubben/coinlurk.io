@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import MainContainer from './MainContainer';
 import Exchanges from './Exchanges';
+import TradingAndMarketAnalysis from './TradingAndMarketAnalysis';
 
 export default function CoinLurk() {
   return (
@@ -9,6 +10,7 @@ export default function CoinLurk() {
       <Header />
       <MainContainer>
         <Exchanges />
+        <TradingAndMarketAnalysis />
       </MainContainer>
     </main>
   );
