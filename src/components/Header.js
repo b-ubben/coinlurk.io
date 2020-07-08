@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <header className="border border-black bg-darker-grey p-4 z-10">
-      <div className="flex flex-col sm:flex-row w-full items-center justify-between m-auto" style={{ maxWidth: '72rem' }}>
+      <div className="flex flex-col sm:flex-row w-full items-center justify-between m-auto">
         <div>
           <span className="font-bold text-xl text-yellow-700">Coin</span>
           <span className="font-bold text-xl text-gray-300">LURK</span>

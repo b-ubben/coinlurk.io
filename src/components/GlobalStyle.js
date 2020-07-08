@@ -8,6 +8,19 @@ export default createGlobalStyle`
     --grey: #404040;
   }
 
+  ::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--darker-grey);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--grey);
+    border-radius: 0.5rem;
+  }
+
   body {
     * {
       box-sizing: border-box;
