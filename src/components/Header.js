@@ -13,14 +13,14 @@ export default function Header() {
   }
 
   return (
-    <header className="border border-black bg-darker-grey p-4 z-10">
+    <header className="bg-darker-grey p-4 z-10" style={{ height: 65 }}>
       <div className="flex flex-col sm:flex-row w-full items-center justify-between m-auto">
         <div>
           <span className="font-bold text-xl text-yellow-700">Coin</span>
           <span className="font-bold text-xl text-gray-300">LURK</span>
           <span className="font-bold text-sm">.io</span>
         </div>
-        <div className="text-xs mt-4 sm:mt-0">
+        <div className="text-sm mt-4 sm:mt-0">
           <Formik initialValues={searchInitialValues} onSubmit={handleSearch}>
             {({ values, isSubmitting }) => (
               <Form method="post">
@@ -30,12 +30,12 @@ export default function Header() {
                       type="text"
                       placeholder="search (DuckDuckGo)"
                       name="searchTerms"
-                      className="border border-black bg-dark-grey rounded-r-none rounded-lg p-2"
+                      className="bg-dark-grey rounded-r-none rounded p-2"
                       autoComplete="off"
                     />
                     <button
                       type="submit"
-                      className="border border-black border-l-0 rounded-lg rounded-l-none bg-grey text-white px-4 py-2"
+                      className="rounded rounded-l-none bg-grey text-white px-4 py-2"
                     >
                       <img
                         src={SearchIcon}

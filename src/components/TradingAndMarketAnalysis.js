@@ -13,13 +13,13 @@ export default function TradingAndMarketAnalysis() {
       <Window title="Trading & Market Analysis">
         <ul className="flex flex-wrap w-full">
           {links.map(link => (
-            <li className="block w-1/2 sm:w-1/3 my-2 sm:text-center" key={link.href}>
+            <li className="block w-1/2 sm:w-1/3 my-2" key={link.href}>
               <a
                 href={link.href}
                 alt={link.text}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="text-yellow-600"
+                className="hover:underline"
               >
                 {link.text}
               </a>

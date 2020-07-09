@@ -25,13 +25,13 @@ export default function Exchanges() {
       <Window title="Exchanges">
         <ul className="flex flex-wrap w-full">
           {exchanges.map(exch => (
-            <li className="block w-1/2 sm:w-1/3 my-2 sm:text-center" key={exch.href}>
+            <li className="block w-1/2 sm:w-1/3 my-2" key={exch.href}>
               <a
                 href={exch.href}
                 alt={exch.text}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="text-yellow-600"
+                className="hover:underline"
               >
                 {exch.text}
               </a>

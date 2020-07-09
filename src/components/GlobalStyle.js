@@ -23,11 +23,11 @@ export default createGlobalStyle`
 
   body {
     * {
-      box-sizing: border-box;
+      box-sizing: border-box !important;
     }
 
     background-color: var(--dark-grey);
-    font-family: 'Roboto Mono', sans-serif !important;
+    font-family: Assistant !important;
   }
 
   input {

@@ -2,11 +2,11 @@ import React from 'react';
 import useAPI from '../hooks/useAPI';
 import Window from './Window';
 
-export default function News() {
+export default function Tweets() {
   const [api, endpoints] = useAPI();
   const initState = {
     status: 'idle',
-    articles: [],
+    tweets: [],
   };
   const [state, dispatch] = React.useReducer((state, action) => {
     switch (action.type) {
@@ -15,22 +15,22 @@ export default function News() {
       case 'error':
         return { ...state, status: 'rejected' };
       case 'success':
-        return { ...state, status: 'resolved', articles: action.payload.articles };
+        return { ...state, status: 'resolved', tweets: action.payload.tweets };
       default:
         throw new Error('unsupported action type given on News reducer');
     }
   }, initState);
 
-  const getArticles = React.useCallback(() => {
+  const getTweets = React.useCallback(() => {
     (async () => {
       try {
         dispatch({ type: 'started' });
-        const response = await api.get(endpoints.news.TOP_NEWS);
+        const response = await api.get(endpoints.news.TWEETS + '/bitcoin');
         const { result, data, error } = response.data;
         if (!result || error) {
           throw new Error(error);
         }
-        dispatch({ type: 'success', payload: { articles: data } });
+        dispatch({ type: 'success', payload: { tweets: data } });
       } catch (err) {
         dispatch({ type: 'error' });
         window.alert(err);
@@ -39,16 +39,25 @@ export default function News() {
   }, [api, endpoints]);
 
   React.useEffect(() => {
-    getArticles();
-  }, [getArticles]);
+    getTweets();
+  }, [getTweets]);
 
   return (
-    <Window title="Crypto News">
-      {state.status === 'pending' ? (<div className="text-center">loading...</div>) : (
+    <Window title="Bitcoin Tweets">
+      {state.status === 'pending' ? (
+        <div className="text-center">loading...</div>
+      ) : (
         <ul>
-          {state.articles.map((article) => (
-            <li key={article._id} className="my-4">
-              <a href={article.url} target="_blank" rel="noopener noreferrer" className="hover:underline">{article.title}</a>
+          {state.tweets.map(tweet => (
+            <li key={tweet._id} className="my-4">
+              <a
+                href={tweet.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                {tweet.text}
+              </a>
             </li>
           ))}
         </ul>

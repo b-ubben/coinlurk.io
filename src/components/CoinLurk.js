@@ -4,19 +4,21 @@ import MainContainer from './MainContainer';
 import Exchanges from './Exchanges';
 import TradingAndMarketAnalysis from './TradingAndMarketAnalysis';
 import News from './News';
+import Tweets from './Tweets';
 
 export default function CoinLurk() {
   return (
-    <main className="bg-dark-grey text-gray-100 min-h-screen w-full">
+    <main className="bg-dark-grey text-gray-200 w-full">
       <Header />
       <MainContainer>
         <div className="flex flex-col lg:flex-row flex-1">
-          <div className="w-full lg:w-1/4 mx-2">
+          <div className="w-full xl:w-1/4 mx-4">
             <Exchanges />
             <TradingAndMarketAnalysis />
           </div>
-          <div className="w-full lg:w-1/2 mx-2">
+          <div className="w-full xl:w-1/2 mx-4">
             <News />
+            <Tweets />
           </div>
         </div>
       </MainContainer>
