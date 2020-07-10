@@ -2,7 +2,7 @@ import React from 'react';
 import useAPI from '../hooks/useAPI';
 import Window from './Window';
 
-export default function Tweets() {
+export default function Tweets({ coin, title }) {
   const [api, endpoints] = useAPI();
   const initState = {
     status: 'idle',
@@ -25,7 +25,9 @@ export default function Tweets() {
     (async () => {
       try {
         dispatch({ type: 'started' });
-        const response = await api.get(endpoints.news.TWEETS + '/bitcoin');
+        const response = await api.get(
+          `${endpoints.news.TWEETS}/${coin === undefined ? 'bitcoin' : coin}`
+        );
         const { result, data, error } = response.data;
         if (!result || error) {
           throw new Error(error);
@@ -36,20 +38,22 @@ export default function Tweets() {
         window.alert(err);
       }
     })();
-  }, [api, endpoints]);
+  }, [api, endpoints, coin]);
 
   React.useEffect(() => {
     getTweets();
   }, [getTweets]);
 
   return (
-    <Window title="Bitcoin Tweets">
+    <Window title={title}>
       {state.status === 'pending' ? (
-        <div className="text-center">loading...</div>
+        <div className="flex items-center justify-center" style={{ height: 300 }}>
+          <div className="font-bold">fetching...</div>
+        </div>
       ) : (
         <ul>
           {state.tweets.map(tweet => (
-            <li key={tweet._id} className="my-4">
+            <li key={tweet._id} className="my-4" style={{ maxWidth: '24rem' }}>
               <a
                 href={tweet.url}
                 target="_blank"

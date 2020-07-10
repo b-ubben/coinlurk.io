@@ -43,12 +43,23 @@ export default function News() {
   }, [getArticles]);
 
   return (
-    <Window title="Crypto News">
-      {state.status === 'pending' ? (<div className="text-center">loading...</div>) : (
+    <Window title="Top Crypto News">
+      {state.status === 'pending' ? (
+        <div className="flex items-center justify-center" style={{ height: 300 }}>
+          <div className="font-bold">fetching...</div>
+        </div>
+      ) : (
         <ul>
-          {state.articles.map((article) => (
+          {state.articles.map(article => (
             <li key={article._id} className="my-4">
-              <a href={article.url} target="_blank" rel="noopener noreferrer" className="hover:underline">{article.title}</a>
+              <a
+                href={article.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                {article.title}
+              </a>
             </li>
           ))}
         </ul>
