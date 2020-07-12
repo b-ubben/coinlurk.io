@@ -13,11 +13,11 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-darker-grey p-4 z-10" style={{ height: 65 }}>
+    <header className="bg-gray-200 p-4 z-10" style={{ height: 65 }}>
       <div className="flex flex-col sm:flex-row w-full items-center justify-between m-auto">
         <div>
           <span className="font-bold text-xl text-yellow-700">Coin</span>
-          <span className="font-bold text-xl text-gray-300">LURK</span>
+          <span className="font-bold text-xl text-blue-700">LURK</span>
           <span className="font-bold text-sm">.io</span>
         </div>
         <div className="text-sm mt-4 sm:mt-0">
@@ -30,12 +30,13 @@ export default function Header() {
                       type="text"
                       placeholder="search (DuckDuckGo)"
                       name="searchTerms"
-                      className="bg-dark-grey rounded-r-none rounded p-2"
+                      className="bg-gray-300 rounded-r-none rounded p-2"
                       autoComplete="off"
+                      style={{ width: 225 }}
                     />
                     <button
                       type="submit"
-                      className="rounded rounded-l-none bg-grey text-white px-4 py-2"
+                      className="rounded rounded-l-none bg-blue-700 text-white px-4 py-2"
                     >
                       <img
                         src={SearchIcon}

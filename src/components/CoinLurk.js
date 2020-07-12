@@ -8,7 +8,7 @@ import Tweets from './Tweets';
 
 export default function CoinLurk() {
   return (
-    <main className="bg-dark-grey text-gray-200 w-full">
+    <main className="w-full">
       <Header />
       <MainContainer>
         <div className="flex flex-col lg:flex-row flex-1">

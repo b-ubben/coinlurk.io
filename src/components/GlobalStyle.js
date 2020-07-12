@@ -13,11 +13,11 @@ export default createGlobalStyle`
   }
 
   ::-webkit-scrollbar-track {
-    background-color: var(--darker-grey);
+    background-color: rgb(0 0 0 / .11);
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: var(--grey);
+    background-color: rgb(0 0 0 / .1666);
     border-radius: 0.5rem;
   }
 
@@ -26,7 +26,6 @@ export default createGlobalStyle`
       box-sizing: border-box !important;
     }
 
-    background-color: var(--dark-grey);
     font-family: Assistant !important;
   }
 

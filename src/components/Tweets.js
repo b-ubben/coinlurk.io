@@ -62,6 +62,7 @@ export default function Tweets({ coin, title }) {
               >
                 {tweet.text}
               </a>
+              <hr className="mt-4" />
             </li>
           ))}
         </ul>
